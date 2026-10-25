@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10101b" />
+  <title>THES | The Hyper Entertainment System</title>
+  <meta name="description" content="THES is The Hyper Entertainment System: discover games, save favorites, and play inside the page." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="startup-screen" id="startupScreen" aria-label="Loading THES">
+    <div class="startup-mark">S</div><div class="startup-word">THE<strong>S</strong></div>
+    <p>Synchronizing your next session<span class="loading-dots">...</span></p>
+    <div class="loading-track" role="progressbar" aria-label="Loading website" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="loadingProgress"></span></div>
+    <div class="loading-percent" id="loadingPercent">0%</div>
+  </div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="THES home"><span class="brand-mark">S</span><span class="brand-copy"><span class="brand-word">THE<strong>S</strong></span><small>THE HYPER ENTERTAINMENT SYSTEM</small></span></a>
+      <div class="side-label">DISCOVER</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
+        <button class="nav-item" data-view="trending"><span>↗</span> Trending</button>
+        <button class="nav-item" data-view="home"><span>▦</span> All games</button>
+        <button class="nav-item" data-view="favorites"><span>♡</span> My favorites</button>
+        <button class="nav-item" data-view="recent"><span>◷</span> Recently played</button>
+      </nav>
+      <div class="side-label genre-label">CATEGORIES</div>
+      <nav class="side-nav genres" aria-label="Game categories">
+        <button class="nav-item" data-category="All"><span>▦</span> All games</button>
+        <button class="nav-item" data-category="Arcade"><span>🕹️</span> Arcade</button>
+        <button class="nav-item" data-category="Puzzle"><span>🧩</span> Puzzle</button>
+        <button class="nav-item" data-category="Racing"><span>🏎️</span> Racing</button>
+        <button class="nav-item" data-category="Action"><span>⚡</span> Action</button>
+        <button class="nav-item" data-category="Sports"><span>⚽</span> Sports</button>
+        <button class="nav-item" data-category="Cozy"><span>🌱</span> Cozy</button>
+        <button class="nav-item" data-category="Horror"><span>👻</span> Horror</button>
+        <button class="nav-item" data-category="2 Player"><span>👥</span> 2 Player</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="online-dot"></div><span>Ready when you are</span><button id="themeToggle" aria-label="Toggle color theme">☼</button></div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <button class="mobile-brand brand" aria-label="THES home"><span class="brand-mark">S</span><span class="brand-copy"><span class="brand-word">THE<strong>S</strong></span><small>THE HYPER ENTERTAINMENT SYSTEM</small></span></button>
+        <div class="breadcrumbs"><span>Explore</span><b>/</b><strong id="crumb">For you</strong></div>
+        <label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Find your next favorite…" autocomplete="off" /><kbd>⌘ K</kbd></label>
+        <button class="music-toggle" id="musicToggle" type="button" aria-label="Mute homepage music" title="Mute homepage music">♫ <span>Music on</span></button>
+        <button class="avatar" title="Your player profile">P</button>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy"><div class="eyebrow"><span class="sparkle">✦</span> YOUR NEXT FAVORITE IS HERE</div>
+          <h1>A little play<br />goes a <em>long way.</em></h1>
+          <p>Pick a game. Jump right in. No downloads, no waiting — just good times.</p>
+        <button class="primary-button" id="heroPlay">Explore horror games <span>↗</span></button>
+          <div class="hero-proof"><div class="stacked-avatars"><span>🧑🏽</span><span>👩🏻</span><span>🧑🏾</span><span>👨🏼</span></div><span><b>Good games,</b> zero fuss</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="planet planet-main">✦</div><div class="planet planet-mini">✹</div><div class="hero-tile tile-a">🎮</div><div class="hero-tile tile-b">👾</div><div class="hero-tile tile-c">🍒</div><div class="hero-tile tile-d">🚀</div><div class="hero-caption">PLAY YOUR WAY <span>↗</span></div></div>
+      </section>
+
+      <section class="quick-cats" aria-label="Quick categories">
+        <button class="quick-cat selected" data-category="All"><span>✦</span> All games</button><button class="quick-cat" data-category="Horror"><span>👻</span> Horror</button><button class="quick-cat" data-category="Action"><span>⚡</span> Action</button><button class="quick-cat" data-category="2 Player"><span>👥</span> 2 Player</button><button class="quick-cat" data-category="Puzzle"><span>🧩</span> Puzzle</button><button class="quick-cat" data-category="Racing"><span>🏁</span> Racing</button>
+      </section>
+
+      <section class="games-section" id="gamesSection">
+        <div class="section-heading"><div><div class="section-kicker" id="sectionKicker">HAND-PICKED FOR YOU</div><h2 id="sectionTitle">Play your mood</h2></div><button class="text-button" id="seeAll">See all games <span>→</span></button></div>
+        <div class="game-grid" id="gameGrid"></div>
+        <div class="empty-state" id="emptyState" hidden><div>🛸</div><h3>No games found</h3><p>Try another search or category.</p><button class="text-button" id="resetFilters">Show me everything →</button></div>
+      </section>
+      <section class="browse-bottom" id="browseBottom">
+        <div class="browse-intro"><div class="section-kicker">FIND YOUR NEXT WORLD</div><h2>Browse by category</h2><p>Every play button takes you to the game’s original website.</p></div>
+        <section class="game-shelf" id="horrorShelf"><div class="shelf-head"><div><div class="section-kicker">MAIN STORY THEN SPIN-OFFS · CHAPTER ORDER</div><h2>👻 Horror · Forgotten Hill</h2></div><button class="shelf-more">See all horror →</button></div><div class="shelf-grid"></div></section>
+        <section class="game-shelf" id="actionShelf"><div class="shelf-head"><div><div class="section-kicker">FAST-PACED PICKS</div><h2>⚡ Action</h2></div><button class="shelf-more">See all action →</button></div><div class="shelf-grid"></div></section>
+        <section class="game-shelf" id="twoPlayerShelf"><div class="shelf-head"><div><div class="section-kicker">GRAB A FRIEND</div><h2>👥 2 Player</h2></div><button class="shelf-more">See all 2 player →</button></div><div class="shelf-grid"></div></section>
+        <section class="game-shelf" id="puzzleShelf"><div class="shelf-head"><div><div class="section-kicker">THINK YOUR WAY THROUGH</div><h2>🧩 Puzzle</h2></div><button class="shelf-more">See all puzzles →</button></div><div class="shelf-grid"></div></section>
+        <section class="game-shelf" id="racingShelf"><div class="shelf-head"><div><div class="section-kicker">READY, SET, GO</div><h2>🏁 Racing</h2></div><button class="shelf-more">See all racing →</button></div><div class="shelf-grid"></div></section>
+        <section class="game-shelf" id="sportsShelf"><div class="shelf-head"><div><div class="section-kicker">STEP INTO THE ARENA</div><h2>🏏 Sports</h2></div><button class="shelf-more">See all sports →</button></div><div class="shelf-grid"></div></section>
+        <section class="game-shelf" id="favoritesShelf"><div class="shelf-head"><div><div class="section-kicker">THIS DEVICE'S SAVED GAMES</div><h2>♡ Favorites</h2></div><button class="shelf-more" data-favorites-view>View favorites →</button></div><div class="shelf-grid"></div></section>
+        <section class="game-shelf" id="recentShelf"><div class="shelf-head"><div><div class="section-kicker">THIS DEVICE'S PLAY HISTORY</div><h2>◷ Recently played</h2></div><button class="shelf-more" data-recent-view>View history →</button></div><div class="shelf-grid"></div></section>
+      </section>
+      <footer><span class="footer-logo">THE<strong>S</strong><span>®</span></span><span>Made for the joy of playing.</span><span>Every game deserves a good home.</span><span>Created by Siddhanth S.</span></footer>
+    </main>
+  </div>
+
+  <div class="notice-backdrop" id="embedNotice" hidden>
+    <section class="embed-notice" role="dialog" aria-modal="true" aria-labelledby="embedNoticeTitle">
+      <div class="section-kicker">QUICK HEADS-UP</div>
+      <h2 id="embedNoticeTitle">Some games may need their original site</h2>
+      <p>Some publishers block games from loading inside THES. If a game does not appear or play here, choose <strong>Open original ↗</strong> in the player to launch it on the publisher’s website.</p>
+      <button class="primary-button" id="noticeGotIt" type="button">Got it — let’s play <span>→</span></button>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="gameModal" hidden>
+    <section class="game-modal browser-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="browser-modal-head"><div class="browser-brand"><span class="online-dot"></span><span>THES ARCADE</span><small>THE HYPER ENTERTAINMENT SYSTEM</small></div><div class="browser-controls"><a id="openOriginal" href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a><button id="fullscreenGame" aria-label="Fullscreen game">⛶</button><button class="modal-close" id="modalClose" aria-label="Close game">×</button></div></div>
+      <div class="browser-frame-wrap"><iframe id="gameFrame" title="Game from original publisher" src="about:blank" allow="fullscreen; autoplay; gamepad; camera; microphone; clipboard-read; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><div class="frame-fallback"><span>If this game does not load here:</span><a id="fallbackOriginal" href="#" target="_blank" rel="noopener noreferrer">Open original ↗</a></div></div>
+      <div class="browser-modal-foot"><div><div class="section-kicker" id="modalCategory">GAME</div><h2 id="modalTitle">Game title</h2></div></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
